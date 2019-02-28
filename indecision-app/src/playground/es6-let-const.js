@@ -37,3 +37,15 @@ const multiplier = {
     }
 };
 console.log(multiplier.multiply());
+
+//conditional rendering 
+/* 
+function getLocation(location){
+if (location){
+return <p>user.location</p>
+
+//given there's an object named user with a location keyvalue pair
+{getlocation(user.location)} 
+}
+}
+*/
