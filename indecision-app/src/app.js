@@ -1,7 +1,5 @@
 //JSX = Javascript XML 
 
-//fetch element
-const appRoot = document.getElementById('app');
 
 let app = {
     title: 'Indecision App',
@@ -24,17 +22,32 @@ const resetButton = () => {
     renderApp();
 };
 
+const onMakeDecision = () => {
+    const randomNum = Math.floor(Math.random() * app.options.length);
+    const option = app.options[randomNum];
+    alert(option);
+};
+
+//fetch element
+const appRoot = document.getElementById('app');
+
 const renderApp = () => {
     const template = (
         <div>
             <h1>Header</h1>
             <p>This is JSX from app.js</p>
             <p>{app.options.length}</p>
+            <button disabled={app.options.length ? false : true} onClick={onMakeDecision}>What should I do?</button>
+            <button onClick={resetButton}>Reset Array</button>
+
+            {
+                app.options.map((option) => <p key={option}>Option: {option}</p>)
+             }
+
             <form onSubmit={onFormSubmit}>
                 <input type="text" name="option" />
                 <button>Add Option</button>
             </form>
-            <button onClick={resetButton}>Reset Array</button>
         </div>
     );
 

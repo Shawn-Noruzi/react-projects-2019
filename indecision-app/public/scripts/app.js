@@ -2,8 +2,6 @@
 
 //JSX = Javascript XML 
 
-//fetch element
-var appRoot = document.getElementById('app');
 
 var app = {
     title: 'Indecision App',
@@ -26,6 +24,15 @@ var resetButton = function resetButton() {
     renderApp();
 };
 
+var onMakeDecision = function onMakeDecision() {
+    var randomNum = Math.floor(Math.random() * app.options.length);
+    var option = app.options[randomNum];
+    alert(option);
+};
+
+//fetch element
+var appRoot = document.getElementById('app');
+
 var renderApp = function renderApp() {
     var template = React.createElement(
         'div',
@@ -46,6 +53,24 @@ var renderApp = function renderApp() {
             app.options.length
         ),
         React.createElement(
+            'button',
+            { disabled: app.options.length ? false : true, onClick: onMakeDecision },
+            'What should I do?'
+        ),
+        React.createElement(
+            'button',
+            { onClick: resetButton },
+            'Reset Array'
+        ),
+        app.options.map(function (option) {
+            return React.createElement(
+                'p',
+                { key: option },
+                'Option: ',
+                option
+            );
+        }),
+        React.createElement(
             'form',
             { onSubmit: onFormSubmit },
             React.createElement('input', { type: 'text', name: 'option' }),
@@ -54,11 +79,6 @@ var renderApp = function renderApp() {
                 null,
                 'Add Option'
             )
-        ),
-        React.createElement(
-            'button',
-            { onClick: resetButton },
-            'Reset Array'
         )
     );
 
