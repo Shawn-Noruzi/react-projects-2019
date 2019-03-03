@@ -1,32 +1,82 @@
+const count = 0;
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleAddOne = this.handleAddOne.bind(this);
+    this.handleMinusOne = this.handleMinusOne.bind(this);
+      this.handleReset = this.handleReset.bind(this);
+      //default state object
+      this.state = {
+          count: 0
+      };
+  }
+  handleAddOne() {
+      this.setState((prevState) => {
+          return {
+              count: prevState.count + 1
+          }
+      });
+  }
 
-let count = 0;
-const addOne = () => {
-    count++; renderCounterApp();
+    handleMinusOne() {
+        this.setState((prevState) => {
+            return {
+                count: prevState.count - 1
+            }
+        });
+    }
+  
+
+    handleReset() {
+        this.setState(() => {
+            return {
+                count: 0
+            }
+        });
+    }
+
+
+  render() {
+    return (
+      <div>
+            <h1>Count: {this.state.count} </h1>
+        <button onClick={this.handleAddOne}>+1</button>
+        <button onClick={this.handleMinusOne}>-1</button>
+        <button onClick={this.handleReset}>reset</button>
+      </div>
+    );
+  }
 }
-const minusOne = () => {
-    count--; renderCounterApp();
-}
-const reset = () => {
-    count = 0;
-    renderCounterApp()
-}
+
+ReactDOM.render(<Counter />, document.getElementById("app"));
+
+//let count = 0;
+//const addone = () => {
+//    count++; rendercounterapp();
+//}
+//const minusone = () => {
+//    count--; rendercounterapp();
+//}
+//const reset = () => {
+//    count = 0;
+//    rendercounterapp()
+//}
 
 //fetch element
-const appRoot = document.getElementById('app');
+//const approot = document.getelementbyid('app');
 
+//const rendercounterapp = () => {
+//    const templatetwo = (
+//        <div>
+//            <h1>count: {count}</h1>
+//            <button onclick={addone}>+1</button>
+//            <button onclick={minusone}>-1</button>
+//            <button onclick={reset}>0</button>
 
-const renderCounterApp = () => {
-    const templateTwo = (
-        <div>
-            <h1>Count: {count}</h1>
-            <button onClick={addOne}>+1</button>
-            <button onClick={minusOne}>-1</button>
-            <button onClick={reset}>0</button>
+//        </div>
+//    );
+//    render to screen
+//    reactdom.render(templatetwo, approot);
+//};
 
-        </div>
-    );
-    //render to screen
-    ReactDOM.render(templateTwo, appRoot);
-};
-
-renderCounterApp();
+//rendercounterapp();
