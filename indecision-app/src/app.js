@@ -1,3 +1,5 @@
-import isSenior from './persons.js';
-console.log('app.js is running');
-console.log(isSenior(4));
+//installed validator@8.0.0
+
+import validator from 'validator'; //webpack looks for it in node modules folder when named this way
+
+console.log(validator.isEmail('shawn.noruzi@gmail.com'));
