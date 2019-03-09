@@ -1,5 +1,5 @@
-//installed validator@8.0.0
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import validator from 'validator'; //webpack looks for it in node modules folder when named this way
-
-console.log(validator.isEmail('shawn.noruzi@gmail.com'));
+const template = <p>yo</p>;
+ReactDOM.render(template, document.getElementById('app'));
