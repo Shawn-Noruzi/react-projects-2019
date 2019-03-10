@@ -15,7 +15,8 @@ module.exports = {
             test: /\.js$/,
             exclude: /node_modules/
         }]
-    }
+    },
+    devtool: 'cheap-module-eval-source-map'
 };
 
 //loader - customize behavior of webpack when you load a given file (.js, .jpeg, .scss)
