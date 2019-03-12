@@ -9,5 +9,13 @@ body {
     background: #333745;
 }
 
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
 
 

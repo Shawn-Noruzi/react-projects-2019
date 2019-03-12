@@ -3,7 +3,11 @@ import Option from './Option';
 
 const Options = (props) => (
     <div>
-        <p>Component : Options </p>
+        <button
+            className="button button--link"
+            onClick={props.handleDeleteOptions}>
+            Remove All Options
+        </button>
         {props.options.length === 0 && (
             <p>Add some options into the options array</p>
         )}
@@ -15,7 +19,7 @@ const Options = (props) => (
             />
         ))}
 
-        <button onClick={props.handleDeleteOptions}>Remove All Options</button>
+        
     </div>
 );
 
