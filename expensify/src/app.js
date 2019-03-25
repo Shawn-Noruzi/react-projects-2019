@@ -18,11 +18,11 @@ store.subscribe(() => {
 
 //add expense -> water bill
 console.log("add water bill");
-store.dispatch(addExpense({ description: "water bill" }));
+store.dispatch(addExpense({ description: "water bill", amount: 4500, createdAt: 100 }));
 
 //add expense -> gas bill
 console.log("add gass bill");
-store.dispatch(addExpense({ description: "gas bill" }));
+store.dispatch(addExpense({ description: "gas bill" , amount: 4500, createdAt: 100}));
 
 //setTextFilter -> bill  (2i tems ) -> water (1 item)
 
