@@ -18,7 +18,7 @@ store.subscribe(() => {
 
 //add expense -> water bill
 console.log("add water bill");
-store.dispatch(addExpense({ description: "water bill", amount: 4500}));
+store.dispatch(addExpense({ description: "water bill", amount: 3500}));
 
 //add expense -> gas bill
 console.log("add gass bill");
