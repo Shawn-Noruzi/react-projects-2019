@@ -28,8 +28,8 @@ console.log("add rent bill");
 store.dispatch(addExpense({ description: "rent" , amount: 109500}));
 //setTextFilter -> bill  (2i tems ) -> water (1 item)
 
-// console.log("text filter for bill");
-// store.dispatch(setTextFilter("bill"));
+console.log("text filter for ''");
+store.dispatch(setTextFilter(""));
 
 // console.log("text filter for water");
 // store.dispatch(setTextFilter("water"));
