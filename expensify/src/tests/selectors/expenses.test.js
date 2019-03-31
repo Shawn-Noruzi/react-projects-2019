@@ -1,4 +1,5 @@
 import selectExpenses from "../../selectors/expenses";
+import moment from "moment";
 
 const expenses = [
   {
@@ -13,35 +14,40 @@ const expenses = [
     description: "rent",
     note: "",
     amount: 100095,
-    createdAt: -1000
+    createdAt: moment(0)
+      .subtract(4, "days")
+      .valueOf()
   },
   {
     id: "3",
     description: "Credit Card",
     note: "",
     amount: 4595,
-    createdAt: 1000
+    createdAt: moment(0)
+      .add(4, "days")
+      .valueOf()
   }
 ];
 
 test("should filter by text value", () => {
-    const filters = {
-        text: 'e',
-        sortBy: 'date',
-        startDate : undefined,
-        endDate : undefined
-    };
+  const filters = {
+    text: "e",
+    sortBy: "date",
+    startDate: undefined,
+    endDate: undefined
+  };
   const result = selectExpenses(expenses, filters);
-  expect(result).toEqual([ expenses[2], expenses[1]]);
+  expect(result).toEqual([expenses[2], expenses[0]]);
 });
 
-test('should filter by startDate', () => {
- const filters = {
-     text: '',
-     startDate : 0, 
-     endDate: 1000
- };
 
- const result = selectExpenses(expenses,filters);
- expect(result).toEqual([expenses[0], expenses[2]]);
+test("should filter by startDate", () => {
+  const filters = {
+    text: '',
+    sortBy: "date",
+    startDate: moment(0),
+    endDate: undefined
+  };
+  const result = selectExpenses(expenses, filters);
+  expect(result).toEqual([expenses[2], expenses[0]]);
 });
