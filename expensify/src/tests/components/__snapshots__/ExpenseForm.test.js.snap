@@ -10,13 +10,13 @@ exports[`should render expenseform with expense data  1`] = `
       onChange={[Function]}
       placeholder="Description"
       type="text"
-      value=""
+      value="Rent"
     />
     <input
       onChange={[Function]}
       placeholder="Amount"
       type="text"
-      value=""
+      value="1095"
     />
     <withStyles(SingleDatePicker)
       anchorDirection="left"
@@ -25,7 +25,7 @@ exports[`should render expenseform with expense data  1`] = `
       calendarInfoPosition="bottom"
       customCloseIcon={null}
       customInputIcon={null}
-      date={"2019-04-02T21:31:43.297Z"}
+      date={"1969-12-28T00:00:00.000Z"}
       daySize={39}
       disableScroll={false}
       disabled={false}
@@ -144,7 +144,7 @@ exports[`should render expenseform with no data  1`] = `
       calendarInfoPosition="bottom"
       customCloseIcon={null}
       customInputIcon={null}
-      date={"2019-04-02T21:31:43.284Z"}
+      date={"1970-01-01T00:00:00.000Z"}
       daySize={39}
       disableScroll={false}
       disabled={false}
