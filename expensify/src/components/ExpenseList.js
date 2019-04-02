@@ -4,12 +4,15 @@ import ExpenseListItem from "./ExpenseListItem";
 import selectExpenses from "../selectors/expenses";
 
 //this connects a component piece with the redux store using connect, mapStateToProps and state
-const ExpenseList = props => (
+export const ExpenseList = props => (
   <div>
-    <h1> Expense List </h1>
-    {props.expenses.map(expense => {
-      return <ExpenseListItem key={expense.id} {...expense} />;
-    })}
+    {props.expenses.length === 0 ? (
+      <p>no expenses</p>
+    ) : (
+      props.expenses.map(expense => {
+        return <ExpenseListItem key={expense.id} {...expense} />;
+      })
+    )}
   </div>
 );
 
