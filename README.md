@@ -2,6 +2,7 @@
 React
 Redux
 React-Router
+Express
 Webpack
 Babel
 Testing with Jest
